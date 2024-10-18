@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id           String         @id
+  title        String
+  subject      String
+  genre        String
+  description  String
+  releaseDate  DateTime       @map("release_date")
+  createdBy    Manager        @relation(fields: [managerId], references: [id])
+  managerId    String
+  createdAt    DateTime       @map("created_at")
+  updatedAt    DateTime       @map("updated_at")
+  AuthorsBooks AuthorsBooks[]
+
+  @@map("books")
+}
+
+model Manager {
+  id        String   @id
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @map("created_at")
+  updatedAt DateTime @map("updated_at")
+  Author    Author[]
+  Book      Book[]
+
+  @@map("managers")
+}
+
+model Author {
+  id           String         @id
+  name         String
+  nationality  String
+  pseudonym    String?
+  createdAt    DateTime       @map("created_at")
+  updatedAt    DateTime       @map("updated_at")
+  createdBy    Manager        @relation(fields: [managerId], references: [id])
+  managerId    String
+  AuthorsBooks AuthorsBooks[]
+
+  @@map("locals")
+}
+
+model AuthorsBooks {
+  authors   Author @relation(fields: [authorsId], references: [id])
+  authorsId String
+  books     Book   @relation(fields: [booksId], references: [id])
+  booksId   String
+
+  @@id([authorsId, booksId])
+  @@map("authors_books")
+}

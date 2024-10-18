@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "3784bf2e-55cc-4f41-b1df-6f9526c7acfc",
+		"name": "Libery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22516493"
+	},
+	"item": [
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "Manager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Bruno Pedro\",\n    \"email\" : \"bruno@test.com\",\n    \"password\" : \"###\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/managers"
+					},
+					"response": []
+				},
+				{
+					"name": "Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"bruno@test.com\",\n    \"password\" : \"###\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/auth"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"teste\",\n    \"nationality\": \"sdds\",\n    \"pseudonym\": \"dsdd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/authors"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/authors"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pseudonym\" :\"teste 4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/authors/eafdaccf-671d-4576-a9c9-b2c74b5458a5"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/authors/59a76ba0-2e6d-4f68-b232-fa7ad98ef09e"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pseudonym\" :\"teste 4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/authors/eafdaccf-671d-4576-a9c9-b2c74b5458a5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"title\": \"Clean Code\",\n      \"subject\": \"Programação\",\n      \"authorsId\": [\"09199f9b-2961-4918-9a1e-6daeb9a12b5a\"],\n      \"genre\": \"Tecnico\",\n      \"releaseDate\": \"2024-09-24\",\n      \"description\": \"Melhor livro sobre programação\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/books"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/books"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pseudonym\" :\"teste 4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/books/eafdaccf-671d-4576-a9c9-b2c74b5458a5"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/books/6d51a096-56c6-49e0-b957-094b834f8b35"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjkyZWRlOWUyLTRkOTYtNDAzZS05ZmQ1LWMyMzI2YzMzNTBiYyIsIm5hbWUiOiJCcnVubyBQZWRybyIsImlhdCI6MTcyOTI3NzMxMywiZXhwIjoxNzI5NDUwMTEzfQ.IZNWIFjpn9ml7eqAz9BgCu2PMIRfe6mYMCveJX4OyNo"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pseudonym\" :\"teste 4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/books/eafdaccf-671d-4576-a9c9-b2c74b5458a5"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3333",
+			"type": "string"
+		}
+	]
+}
